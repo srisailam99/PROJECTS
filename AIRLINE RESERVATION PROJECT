@@ -1,0 +1,518 @@
+// AIRLINE RESERVATION PROJECT
+
+#include<iostream>
+#include<fstream>
+#include<iomanip> // iomanip used for floating point values
+using namespace std;
+
+
+void mainMenu();
+
+class management
+{
+    public:
+
+    management(){
+        mainMenu();
+    }
+};
+
+class details
+{
+    public:
+
+       static string name,gender;
+       int phoneNo;
+       int age;
+       string add;
+       static int cID;
+       char arr[100];
+
+       void information()
+       {
+
+        cout<<"\n ENTER THE CUSTOMER ID:  ";
+        cin>>cID;
+        cout<<"\n ENTER THE NAME:  ";
+        cin>>name;
+        cout<<"\n ENTER THE AGE:  ";
+        cin>>age;
+        cout<<"\n ADDRESS:  ";
+        cin>>add;
+        cout<<"\n GENDER:  ";
+        cin>>gender;
+        cout<<"\n\n YOUR DETAILS ARE SAVED WITH US \n  "<<endl;
+
+       }
+
+};
+
+int details::cID;
+string details::name;
+string details::gender;
+
+class registration
+{
+    public:
+    static int choice;
+    int choice1;
+    int back;
+    static float charges;
+
+    void flight(){
+
+        string flightN[]={"DUBAI","CANADA","UK","USA","AUSTRALIA","EUROPE"};
+
+        for(int a=0; a<6; a++){
+            cout<<(a+1)<<".flight to "<<flightN[a]<<endl;
+        }
+
+        cout<<"\n\n WELCOME TO THE INDIAN AIRLINES! "<<endl;
+        cout<<"PRESS THE NUMBER OF THE COUNTRY WHICH YOU WANT TO BOOK THE FLIGHT: ";
+        cin>>choice;
+
+        switch(choice){
+
+            case 1:
+            {
+                cout<<"__________________________ WELCOMR TO DUBAI EMIRATES ______________________________\n"<<endl;
+
+                cout<<"YOUR COMFORT IS OUR PRIORITY, ENJOY THE JOURNEY ! "<<endl;
+
+                cout<<" FOLLOWING ARE THE FLIGHTS \n"<<endl;
+
+                cout<<"1. DUB - 498"<<endl;
+                cout<<"\t 08-01-2023 8:00 AM 10hrs Rs. 14000"<<endl;
+                cout<<"2. DUB - 659"<<endl;
+                cout<<"\t 09-01-2023 12:00 AM 12hrs Rs. 10000"<<endl;
+                cout<<"3. DUB - 589"<<endl;
+                cout<<"\t 10-01-2023 04:00 PM 09hrs Rs. 11000"<<endl;
+
+                cout<<"\n SELECT THE FLIGHT YOU WANT TO BOOK :";
+                cin>>choice1;
+
+                if(choice1 == 1){
+                    charges = 14000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT DUB - 498"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 2){
+                     charges = 10000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT DUB - 659"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 3){
+                     charges = 11000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT DUB - 589"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else{
+                    cout<<"INVALID INPUT, SHIFTING TO THE PREVIOUS MENU"<<endl;
+                    flight();
+                }
+
+                cout<<"PRESS ANY KEY TO GO BACK TO THE MAIN MENU:"<<endl;
+                cin>>back;
+
+                if(back==1)
+                mainMenu();
+                else
+                mainMenu();
+            }
+
+            case 2:
+            {
+                 cout<<"__________________________ WELCOMR TO CANADIAN AIRLINES ______________________________\n"<<endl;
+
+                cout<<"YOUR COMFORT IS OUR PRIORITY, ENJOY THE JOURNEY ! "<<endl;
+
+                cout<<" FOLLOWING ARE THE FLIGHTS \n"<<endl;
+
+                cout<<"1. CAN - 525"<<endl;
+                cout<<"\t 08-01-2023 8:00 AM 10hrs Rs. 22000"<<endl;
+                cout<<"2. CAN - 235"<<endl;
+                cout<<"\t 09-01-2023 12:00 AM 12hrs Rs. 19000"<<endl;
+                cout<<"3. CAN - 864"<<endl;
+                cout<<"\t 10-01-2023 04:00 PM 09hrs Rs. 11000"<<endl;
+
+                cout<<"\n SELECT THE FLIGHT YOU WANT TO BOOK :";
+                cin>>choice1;
+
+                if(choice1 == 1){
+                    charges = 22000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT CAN - 525"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 2){
+                     charges = 19000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT CAN - 235"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 3){
+                     charges = 11000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT CAN - 864"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else{
+                    cout<<"INVALID INPUT, SHIFTING TO THE PREVIOUS MENU"<<endl;
+                    flight();
+                }
+
+                cout<<"PRESS ANY KEY TO GO BACK TO THE MAIN MENU:"<<endl;
+                cin>>back;
+
+                if(back==1)
+                mainMenu();
+                else
+                mainMenu();
+            }
+
+            case 3:
+            {
+                cout<<"__________________________ WELCOMR TO UK AIRWAYS ______________________________\n"<<endl;
+
+                cout<<"YOUR COMFORT IS OUR PRIORITY, ENJOY THE JOURNEY ! "<<endl;
+
+                cout<<" FOLLOWING ARE THE FLIGHTS \n"<<endl;
+
+                cout<<"1. UK - 123"<<endl;
+                cout<<"\t 08-01-2023 8:00 AM 10hrs Rs. 44000"<<endl;
+                cout<<"2. UK - 456"<<endl;
+                cout<<"\t 09-01-2023 12:00 AM 12hrs Rs. 50000"<<endl;
+                cout<<"3. UK - 789"<<endl;
+                cout<<"\t 10-01-2023 04:00 PM 09hrs Rs. 48000"<<endl;
+
+                cout<<"\n SELECT THE FLIGHT YOU WANT TO BOOK :";
+                cin>>choice1;
+
+                if(choice1 == 1){
+                    charges = 44000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT UK - 123"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 2){
+                     charges = 50000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT UK - 456"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 3){
+                     charges = 48000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT UK - 789"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else{
+                    cout<<"INVALID INPUT, SHIFTING TO THE PREVIOUS MENU"<<endl;
+                    flight();
+                }
+
+                cout<<"PRESS ANY KEY TO GO BACK TO THE MAIN MENU:"<<endl;
+                cin>>back;
+
+                if(back==1)
+                mainMenu();
+                else
+                mainMenu();
+            }
+
+            case 4:
+            {
+                cout<<"__________________________ WELCOMR TO US AIRWAYS ______________________________\n"<<endl;
+
+                cout<<"YOUR COMFORT IS OUR PRIORITY, ENJOY THE JOURNEY ! "<<endl;
+
+                cout<<" FOLLOWING ARE THE FLIGHTS \n"<<endl;
+
+                cout<<"1. US - 321"<<endl;
+                cout<<"\t 08-01-2023 8:00 AM 10hrs Rs. 50000"<<endl;
+                cout<<"2. US - 654"<<endl;
+                cout<<"\t 09-01-2023 12:00 AM 12hrs Rs. 55000"<<endl;
+                cout<<"3. US - 987"<<endl;
+                cout<<"\t 10-01-2023 04:00 PM 09hrs Rs. 43000"<<endl;
+
+                cout<<"\n SELECT THE FLIGHT YOU WANT TO BOOK :";
+                cin>>choice1;
+
+                if(choice1 == 1){
+                    charges = 50000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT US - 321"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 2){
+                     charges = 55000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT US - 654"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 3){
+                     charges = 43000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT US - 987"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else{
+                    cout<<"INVALID INPUT, SHIFTING TO THE PREVIOUS MENU"<<endl;
+                    flight();
+                }
+
+                cout<<"PRESS ANY KEY TO GO BACK TO THE MAIN MENU:"<<endl;
+                cin>>back;
+
+                if(back==1)
+                mainMenu();
+                else
+                mainMenu();
+            }
+
+            case 5:
+            {
+                cout<<"__________________________ WELCOMR TO AUSTRALIAN AIRWAYS ______________________________\n"<<endl;
+
+                cout<<"YOUR COMFORT IS OUR PRIORITY, ENJOY THE JOURNEY ! "<<endl;
+
+                cout<<" FOLLOWING ARE THE FLIGHTS \n"<<endl;
+
+                cout<<"1. AUSTRALIAN - 753"<<endl;
+                cout<<"\t 08-01-2023 8:00 AM 10hrs Rs. 42000"<<endl;
+                cout<<"2. AUSTRALIAN - 159"<<endl;
+                cout<<"\t 09-01-2023 12:00 AM 12hrs Rs. 43000"<<endl;
+                cout<<"3. AUSTRALIAN - 258"<<endl;
+                cout<<"\t 10-01-2023 04:00 PM 09hrs Rs. 47000"<<endl;
+
+                cout<<"\n SELECT THE FLIGHT YOU WANT TO BOOK :";
+                cin>>choice1;
+
+                if(choice1 == 1){
+                    charges = 42000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT AUSTRALIAN - 753"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 2){
+                     charges = 43000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT AUSTRALIAN - 159"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 3){
+                     charges = 47000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT AUSTRALIAN - 258"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else{
+                    cout<<"INVALID INPUT, SHIFTING TO THE PREVIOUS MENU"<<endl;
+                    flight();
+                }
+
+                cout<<"PRESS ANY KEY TO GO BACK TO THE MAIN MENU:"<<endl;
+                cin>>back;
+
+                if(back==1)
+                mainMenu();
+                else
+                mainMenu();
+            }
+
+            case 6:
+            {
+                cout<<"__________________________ WELCOMR TO EUROPE AIRWAYS ______________________________\n"<<endl;
+
+                cout<<"YOUR COMFORT IS OUR PRIORITY, ENJOY THE JOURNEY ! "<<endl;
+
+                cout<<" FOLLOWING ARE THE FLIGHTS \n"<<endl;
+
+                cout<<"1. EUROPE - 111"<<endl;
+                cout<<"\t 08-01-2023 8:00 AM 10hrs Rs. 56000"<<endl;
+                cout<<"2. EUROPE - 222"<<endl;
+                cout<<"\t 09-01-2023 12:00 AM 12hrs Rs. 57000"<<endl;
+                cout<<"3. EUROPE - 333"<<endl;
+                cout<<"\t 10-01-2023 04:00 PM 09hrs Rs. 58000"<<endl;
+
+                cout<<"\n SELECT THE FLIGHT YOU WANT TO BOOK :";
+                cin>>choice1;
+
+                if(choice1 == 1){
+                    charges = 56000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT EUROPE - 111"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 2){
+                     charges = 57000;
+                    cout<<"\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT EUROPE - 222"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else if(choice1 == 3){
+                     charges = 58000;
+                    cout<<"\n\n YOU HAVE SUCCESSFULLY BOOKED THE FLIGHT EUROPE - 333"<<endl;
+                    cout<<"YOU CAN GO BACK TO MENU AND TAKE THE TICKET"<<endl;
+                }
+                else{
+                    cout<<"INVALID INPUT, SHIFTING TO THE PREVIOUS MENU"<<endl;
+                    flight();
+                }
+
+                cout<<"PRESS ANY KEY TO GO BACK TO THE MAIN MENU:"<<endl;
+                cin>>back;
+
+                if(back==1)
+                mainMenu();
+                else
+                mainMenu();
+            }
+
+            default:
+            {
+                cout<<"INVALID INPUT, RETURNING TO THE MAIN MENU"<<endl;
+                mainMenu();
+                break;
+            }
+        }
+    }
+};
+
+float registration::charges;
+int registration::choice;
+
+class ticket: public registration, details
+{
+    public:
+
+    void bill(){
+        string destination = "";
+        ofstream outf("records.txt");
+        {
+            outf<<"___________________ xyz Airlines ___________________"<<endl;
+            outf<<"______________________ TICKET ______________________"<<endl;
+            outf<<"____________________________________________________"<<endl;
+
+            outf<<"CUSTOMER ID: "<<details::cID<<endl;
+            outf<<"CUSTOMER NAME: "<<details::name<<endl;
+            outf<<"CUSTOMER GENDER: "<<details::gender<<endl;
+            outf<<"\t DESCRIPTION "<<endl<<endl;
+
+            if(registration::choice==1)
+            destination = "DUBAI";
+            else if(registration::choice==2)
+            destination = "CANADA";
+            else if(registration::choice==3)
+            destination = "UK";
+            else if(registration::choice==4)
+            destination = "US";
+            else if(registration::choice==5)
+            destination = "AUSTRALIA";
+            else if(registration::choice==6)
+            destination = "EUROPE";
+
+            outf<<"Destination\t\t"<<destination<<endl;
+            outf<<"FLIGHT COST: \t\t"<<registration::charges<<endl;
+        }
+        outf.close();
+    }
+
+    void dispbill(){
+
+        ifstream ifs("records.txt");
+        {
+            if(!ifs){
+                cout<<"FILE ERROR!"<<endl;
+            }
+            while(!ifs.eof()){
+                ifs.getline(arr,100);
+                cout<<arr<<endl;
+            }
+        }
+        ifs.close();
+    }
+};
+
+void mainMenu(){
+    int lchoice;
+    int back;
+
+    cout<<"\t                  INDIAN AIRLINES\n"<<endl;
+    cout<<"\t__________________  Main Menu  _________________"<<endl;
+
+    cout<<"\t________________________________________________"<<endl;
+    cout<<"\t|\t\t\t\t\t\t|"<<endl;
+
+    cout<<"\t|\t PRESS 1 TO ADD CUSTOMER DETAILS         \t|"<<endl;
+    cout<<"\t|\t PRESS 2 TO FLIGHT REGISRATION           \t|"<<endl;
+    cout<<"\t|\t PRESS 3 FOR TICKET AND CHARGES          \t|"<<endl;
+    cout<<"\t|\t PRESS 4 TO EXIT                         \t|"<<endl;
+    cout<<"\t|\t\t\t\t\t\t|"<<endl;
+    cout<<"\t________________________________________________"<<endl;
+
+    cout<<"ENTER THE CHOICE: ";
+    cin>>lchoice;
+
+    details d;
+    registration r;
+    ticket t;
+
+    switch(lchoice){
+
+        case 1:
+        {
+            cout<<"________________ CUSTOMERS ________________\n"<<endl;
+            d.information();
+            cout<<"PRESS ANY KEY TO GO BACK TO THE MAIN MENU ";
+            cin>>back;
+
+            if(back == 1){
+                mainMenu();
+            }
+            else{
+                mainMenu();
+            }
+            break;
+        }
+
+        case 2:
+        {
+            cout<<"______________BOOK A FLIGHT USING THE SYSTEM_______________\n"<<endl;
+            r.flight();
+            break;
+        }
+
+        case 3:
+        {
+            cout<<"_________GET YOUR TICKET__________\n"<<endl;
+            t.bill();
+
+            cout<<"YOUR TICKET IS PRINTED, YOU CAN COLLECT IT \n"<<endl;
+            cout<<"PRESS 1 TO DISPLAY YOUR TICKET ";
+
+            cin>>back;
+
+            if(back == 1){
+                t.dispbill();
+                cout<<"PRESS ANY KEY TO GO BACK TO MAIN MENU: ";
+                cin>>back;
+                if(back == 1)
+                mainMenu();
+                else
+                mainMenu();
+            }
+            else
+            mainMenu();
+            break;
+        }
+
+        case 4:
+        {
+            cout<<"\n\n\t _____________THANK YOU_______________\t\n\n\n"<<endl;
+            break;
+        }
+
+        default:
+        {
+            cout<<"INVALID INPUT, PLEASE TRY AGAIN! \n\n\n\n"<<endl;
+            mainMenu();
+            break;
+        }
+
+
+    }
+
+
+}
+
+int main(){
+    management mobj;
+    return 0;
+}
