@@ -1,0 +1,69 @@
+/// SIMPLE BANKING PROJECT
+#include<iostream>
+using namespace std;
+
+class bank
+{
+    public:
+
+    int money;
+    int bankBalance = 0;
+          
+          void diposit(){
+            cout<<"HOW MUCH MONEY YOU WANT TO DEPOSIT: ";
+            cin>>money;
+            bankBalance += money;
+          }
+
+          void withdraw(){
+            cout<<"HOW MUCH MONEY YOU WANT TO WITHDRAW: ";
+            cin>>money;
+            if(money>bankBalance)
+            cout<<"INSUFFICIENT BALANCE !"<<endl;
+            bankBalance -= money;
+          }
+};
+
+int main(){
+    bank cust;
+    int choice;
+
+    while(1){
+    
+    cout<<"\n\n\n";
+    cout<<"_____________________________"<<endl;
+
+    cout<<"| 1. DEPOSIT                |"<<endl;
+    cout<<"| 2. WITHDRAW               |"<<endl;
+    cout<<"| 3. BALANCE                |"<<endl;
+    cout<<"| 4. EXIT                   |"<<endl;
+
+    cout<<"_____________________________"<<endl;
+
+    cout<<"ENTER YOUR CHOICE:  ";
+    cin>>choice;
+
+    switch (choice)
+    {
+    case 1:
+        cust.diposit();
+        cout<<"SUCCESSFULLY DEPOSITED !"<<endl;
+        break;
+    case 2:
+        cust.withdraw();
+        break;
+    case 3:
+        cout<<"YOUR BALANCE IS: "<<cust.bankBalance<<endl;
+        break;
+    case 4:
+        cout<<"THANK YOU!"<<endl;
+        return 0;
+        break;
+    
+    default:
+        cout<<"CHOOSE FROM THE ABOVE OPTIONS !"<<endl;
+        break;
+    }
+    }
+
+}
