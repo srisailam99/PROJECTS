@@ -1,0 +1,102 @@
+/// STUDENT MARKS MEMO
+#include<iostream>
+#include<stdlib.h>
+#include<iomanip> /// for setw
+using namespace std;
+
+class student
+{
+    int rno;
+    string name;
+    int m1,m2,m3,tm;
+    float per;
+    char grade;
+
+    public:
+        void input_data(){
+            cout<<"ENTER ROLL.NO: ";
+            cin>>rno;
+            cout<<"ENTER NAME: ";
+            cin>>name;
+            cout<<"ENTER 3 SUBJECTS MARKS: ";
+            cin>>m1>>m2>>m3;
+            tm = m1+m2+m3;
+            per=tm*100/300;
+            if(per>=80)
+            grade= 'A';
+            else if(per>=60)
+            grade = 'B';
+            else if(per>=40)
+            grade = 'C';
+            else
+            grade = 'F';
+        }
+
+        void display_all(){
+            cout<<setw(5)<<rno<<setw(15)<<name<<setw(10)<<m1<<setw(5)<<m2<<setw(5)<<m3<<setw(10)<<tm<<setw(10)<<per<<setw(10)<<grade<<endl<<endl;
+        }
+
+        int getrollno(){
+            return rno;
+        }
+
+        void search_student(){
+
+
+            cout<<"=======================================\n";
+            cout<<"| ROLL NUMBER :  "<<rno<<"             \n";
+            cout<<"| NAME :  "<<name<<"                   \n";
+            cout<<"| MARKS1 :  "<<m1<<"                   \n";
+            cout<<"| MARKS2 :  "<<m2<<"                   \n";
+            cout<<"| MARKS3 :  "<<m3<<"                   \n";
+            cout<<"| TOTAL MARKS :  "<<tm<<"              \n";
+            cout<<"| PERCENTAGE :  "<<per<<"              \n";
+            cout<<"| GRADE :  "<<grade<<"                 \n";
+            cout<<"=======================================\n";
+        }
+};
+
+int main(){
+
+    int choice,n,m;
+    cout<<"NUMBER OF STUDENTS: ";
+    cin>>n;
+    student std[n]; // NO.OF STUDENTS DATA WE WANT TO ENTER
+
+    while(1){
+         cout<<"((((((((((()))))))))))\n\n";
+    cout<<"1] INPUT DATA"<<endl;
+    cout<<"2] DIAPLAY ALL"<<endl;
+    cout<<"3] SEARCH STUDENT"<<endl;
+    cout<<"4] EXIT"<<endl<<endl;
+    cout<<"((((((((((()))))))))))\n\n\n";
+
+    cout<<"ENTER YOUR CHOICE: ";
+    cin>>choice;
+
+    if(choice==1){
+        for(int i=0; i<n; i++){
+            std[i].input_data();
+        }
+    }
+    else if(choice==2){
+        for(int i=0; i<n; i++){
+            std[i].display_all();
+        }
+    }
+    else if(choice==3){
+        cout<<"ENTER THE ROLL.NO TO SEARCH: ";
+        cin>>m;
+        for(int i=0; i<n; i++){
+            if(std[i].getrollno()==m){
+                std[i].search_student();
+                break;
+            }
+        }
+    }
+    else if(choice==4){
+        exit(0);
+    }
+    }
+
+}
